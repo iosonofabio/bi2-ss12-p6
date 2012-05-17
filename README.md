@@ -1,4 +1,4 @@
-bi2-ss12-p6
+Project 6 for Bioinformatics II SS12 Uni-Tübingen
 ===========
 
-Project 6 for Bioinformatics II SS12 Uni-Tübingen
+This is a test message.
