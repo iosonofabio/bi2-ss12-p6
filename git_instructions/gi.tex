@@ -1,0 +1,154 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template for a classical article
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper,notitlepage,onecolumn]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Author}{Fabio Zanini}
+\newcommand{\Title}{Brief GIT Instructions}
+\newcommand{\Keywords}{{GIT}, {guide}, {bioinformatics}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb,eucal,eurosym}
+\usepackage{color}
+\usepackage{minted}
+%\usepackage{graphicx}
+%\usepackage[font=small, format=hang, labelfont={sf,bf}, figurename=Fig.]{caption}
+%\usepackage{cite}
+%\usepackage{epigraph}
+%\setlength{\epigraphwidth}{.55\textwidth}
+%\setlength{\epigraphrule}{0pt}
+%\usepackage{multirow}
+%\usepackage[version=3]{mhchem}
+%\usepackage{sagetex}
+%\usepackage[	colorlinks,linkcolor=red,citecolor=red]{hyperref}
+%\hypersetup{	pdfauthor={\Author}, pdftitle={\Title}, pdfkeywords={\Keywords}	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\graphicspath{{./figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\DeclareMathOperator\de{d\!}
+%\newcommand{\comment}[1]{\textit{\textcolor{red}{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\Title}
+\author{\Author}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+
+\section{Starting Up}
+\subsection{Create a Remote Repository}
+\begin{enumerate}
+ \item create a Github account
+ \item create a local SSH key with ssh-keygen (Google this for details) and add it to your Github profile
+ \item click on the {\bf Fork} button in Github
+\end{enumerate}
+
+\subsection{Create a Local Repository}
+\begin{enumerate}
+ \item create a folder on your computer
+ \item clone your online repository into the local folder via the following command:
+  \begin{minted}{sh}
+   git clone https://XXX@github.com/XXX/bi2-ss12-p6.git
+  \end{minted}
+  where XXX is your Github username.
+\end{enumerate}
+Now you have 1 local branch (master) and 1 remote branch (origin/master). The latter corresponds to your own online repository. You can see all branches by issuing
+\begin{minted}{sh}
+git branch -a
+\end{minted}
+
+\subsection{Track Collaborators' Progress}
+\begin{enumerate}
+ \item add your collaborators' repository as remote:
+  \begin{minted}{sh}
+   git remote add NAME git://github.com/YYY/bi2-ss12-p6.git
+  \end{minted}
+  where NAME is an arbitrary name you assign to others' {\it remote} branches repositories, and YYY is to be filled in according to their addresses.
+\end{enumerate}
+Now you have 2 more remote branches (3 in total) that point to the others' online repositories. You can see your remote branches with
+\begin{minted}{sh}
+git remote -v
+\end{minted}
+
+Optional, but recommended:
+\begin{enumerate}
+ \setcounter{enumi}{4}
+ \item create 2 local branches that will track closely what's happening on the 2 remote branches:
+  \begin{minted}{sh}
+   git checkout -b LOCALNAME NAME/master
+  \end{minted}
+  where LOCALNAME is another arbitrary name you give to these auxiliary local branches.
+\end{enumerate}
+The local branches will mirror the remote master branch of the others, which makes things slightly easier later on. Now, if you look at all your branches, you should have at least 6. For instance, in my case
+\begin{minted}{sh}
+git branch -a
+* master
+  taylor
+  zarin
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/taylor/master
+  remotes/zarin/master
+\end{minted}
+
+\noindent
+{\bf Note}: local tracking branches such as the two just created are useful to have a sandbox layer between your fellows' official branches and your own code. For instance, assume I have done some work but you want to inspect it closely before merging it into your master branch. You can merge it into my local branch and, if everything's fine, merge it finally into your master. If you just trust other prople's work, you do not need this.
+
+\section{Typical Workflow}
+The typical workflow depends a bit whether you have created the local tracking branches or not, but the basic commands are the same.
+\begin{enumerate}
+ \item fetch/pull from other people's repositories. If you have not created tracking branches, issue
+  \begin{minted}{sh}
+   git fetch NAME
+  \end{minted}
+  where NAME is the name of your 2 remote branches (you must issue the command twice, once for each NAME). If you do have tracking branches, you can use instead
+  \begin{minted}{sh}
+   git checkout LOCALNAME
+   git pull
+  \end{minted}
+  where LOCALNAME is either one (in succession) of your local tracking branches.
+ \item merging other people's changes into your own local master. If you do not have local tracking branches,
+  \begin{minted}{sh}
+   git checkout master
+   git merge NAME/master
+  \end{minted}
+  If you have local tracking branches,
+  \begin{minted}{sh}
+   git checkout master
+   git merge LOCALNAME
+  \end{minted}
+  {\bf Note}: merge always works by pulling the information from some other branch {\it into} the current one. So you first have to to checkout to {\it enter} your local master, then to merge from your colleagues' work.
+ \item developing/coding (not much to say about this :-) )
+ \item adding files to your local history via
+  \begin{minted}{sh}
+   git add -A
+   git commit -m 'COMMIT MESSAGE'
+  \end{minted}
+  You can always use \mint{sh}{git status} to know where you are and what is happening.
+ \item pushing changes online onto your remote repository
+  \begin{minted}{sh}
+   git push
+  \end{minted}
+  GIT will possibly ask you for a password/passphrase, depending on how you configured your SSH key.
+ \item Notify your colleagues of your work. You can either use Github's "Pull request" button, or just send us an email.
+\end{enumerate}
+
+\section{List of useful commands}
+\begin{description}
+ \item[git status] show the current state of affairs
+ \item[git checkout BRANCHNAME] switch to another branch
+ \item[git add -A] add all files to the history
+ \item[git commit -m 'MESSAGE'] engrave your changes into history with a message
+ \item[git push] push your current branch onto its natural remote repository
+ \item[git fetch BRANCHNAME] update remote branches (no merge performed)
+ \item[git merge BRANCHNAME] merge another branch into the current one
+ \item[git pull] update the remote branches AND merge them into the current one
+ \item[git log] show the history
+ \item[git diff BRANCHNAME] compare the current branch with another one (e.g. a colleague's one) and show the differences
+ \item[git branch -a] list all branches
+ \item[git remote -v] list all remote repositories
+\end{description}
+
+\end{document}
+
