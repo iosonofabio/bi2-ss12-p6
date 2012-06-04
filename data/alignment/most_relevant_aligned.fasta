@@ -1,0 +1,322 @@
+>3tx7_B:(18-249)/1-236 Nuclear receptor subfamily 5 group A member 2; LRH-1,   E=4e-08 s/c=0.23 id=27% cov=87%
+------------------SYQTSSPASIPHLILELLKCEPDEPQVQAKIMAYLQQEQANR
+SKHEKLSTFGLMCKMADQTLFSIVEWARSSIFFRELKVDDQMKLLQNCWSELLILDHIYR
+QVVHGKEGS-I------------------------FLVT-GQQVDYSIIASQAGATLN-N
+LMSHAQ-ELVAKLRSLQFDQREFVCLKFLVLFSLDV--------KNLENFQLVEGVQEQV
+NAALLDYT---MCNYPQQTEKFGQLLLRLP---EIRAISMQAEEYLYYKHLNGDVP----
+---------------
+>3plz_A:(13-249)/1-233 FTZ-F1 related protein; alpha helical sandwhich, family   E=7e-08 s/c=0.23 id=29% cov=86%
+---------------------LVPRGSIPHLILELLKCEPDEPQVQAKIMAYLQQEQANR
+SKHEKLSTFGLMCKMADQTLFSIVEWARSSIFFRELKVDDQMKLLQNCWSELLILDHIYR
+QVVHGKEGS-I------------------------FLVT-GQQVDYSIIASQAGATLN-N
+LMSHAQ-ELVAKLRSLQFDQREFVCLKFLVLFSLDV--------KNLENFQLVEGVQEQV
+NAALLDYT---MCNYPQQTEKFGQLLLRLP---EIRAISMQAEEYLYYKHLNGDVP----
+---------------
+>1ymt_A:(83-249)/1-172 Steroidogenic factor 1; SF-1, ligand-binding domain, ligand,   E=0.002 s/c=0.22 id=26% cov=62%
+------------------------------------------------------------
+----------------------IVDWARRCMVFKELEVADQMTLLQNSWSELLVLDHIYR
+QVQYGKEDS-I------------------------LLVT-GQEVELSTVAVQAG-SLLHS
+LVLRAQ-ELVLQLHALQLDRQEFVCLKFLILFSLDV--------KFLNNHSLVKDAQEKA
+NAALLDYT---LSHYPHSGDKFQQLLLSLV---EVRALSMQAKEYLYHKHLGNEMP----
+---------------
+>1pzl_A:(82-203)/1-125 Hepatocyte nuclear factor 4-alpha; transcription; HET: MYR;   E=0.004 s/c=0.30 id=27% cov=45%
+------------------------------------------------------------
+---------------------VLVEWAKYIPAFCELPLDDQVALLRAHAGEHLLLGATKR
+S--MVFKDV-L------------------------LLGN-DYIVPRHCPE-LAE--MS-R
+VSIRILDELVLPFQELQIDDNEYAYLKAIIFFDPDA--------KGLSDPGKIKRLRSQV
+QVSLED------------------------------------------------------
+---------------
+>3cjw_A:(85-264)/1-182 COUP transcription factor 2; COUP-TFII, nuclear receptor,   E=3e-10 s/c=0.33 id=32% cov=67%
+------------------------------------------------------------
+------------------------EWARNIPFFPDLQITDQVALLRLTWSELFVLNAAQC
+S--MPLHVAPL------------------------LAAA-GLHASPMSADRVVA--FM-D
+HIRIFQ-EQVEKLKALHVDSAEYSCLKAIVLFTSDA--------CGLSDVAHVESLQEKS
+QCALEEYV---RSQYPNQPTRFGKLLLRLP---SLRTVSSSVIEQLFFVRLVGKTPI---
+-ETLIRDMLLSGSSF
+>1g2n_A:(80-203)/1-145 Ultraspiracle protein; antiparallel alpha-helical sandwich,   E=1e-06 s/c=0.34 id=33% cov=47%
+------------------------------------------------------------
+-------------------IAALVVWARDIPHFSQLEMEDQILLIKGSWNELLLFAIAWR
+SMEFLTEER--DGVDGTGNRTTSPPQLM-------CLMP-GMTLHRNSAL-QAG--VG-Q
+IFDRVLSELSLKMRTLRVDQAEYVALKAIILLNPDV--------KGLKNRQEVEVLREKM
+FLCLDE------------------------------------------------------
+---------------
+>1hg4_A:(67-244)/1-206 Ultraspiracle; nuclear hormone receptor, transcription   E=5e-07 s/c=0.24 id=27% cov=67%
+------------------------------------------------------------
+------GAVSALCQVVNKQLFQMVEYARMMPHFAQVPLDDQVILLKAAWIELLIANVAWC
+SIVSLDDGG-AGGGGGGLGHDGSFERRSPGLQPQQLFLNQSFSYHRNSAI-KAG--VS-A
+IFDRILSELSVKMKRLNLDRRELSCLKAIILYNPDI--------RGIKSRAEIEMCREKV
+YACLDEHC---RLEHPGDDGRFAQLLLRLP---ALRSISLKCQDHLFLFRI---------
+---------------
+>3dzy_A:(83-262)/1-177 Retinoic acid receptor RXR-alpha; DNA-binding, HOST-virus   E=1e-16 s/c=0.46 id=32% cov=65%
+------------------------------------------------------------
+----------------------LVEWAKRIPHFSELPLDDQVILLRAGWNELLIASFSHR
+S--IAVKDG-I------------------------LLAT-GLHVHRNSAH-SAG--VG-A
+IFDRVLTELVSKMRDMQMDKTELGCLRAIVLFNPDS--------KGLSNPAEVEALREKV
+YASLEAYC---KHKYPEQPGRFAKLLLRLP---ALRSIGLKCLEHLFFFKLIGDTPI---
+-DTFLMEML------
+>1lbd_A:(83-262)/1-177 RXR_LBD, retinoid X receptor; transcription factor, nuclear   E=9e-16 s/c=0.45 id=30% cov=66%
+------------------------------------------------------------
+----------------------LVEWAKRIPHFSELPLDDQVILLRAGWNELLIASFSHR
+S--IAVKDG-I------------------------LLAT-GLHVHRNSAH-SAG--VG-A
+IFDRVLTELVSKMRDMQMDKTELGCLRAIVLFNPDS--------KGLSNPAEVEALREKV
+YASLEAYC---KHKYPEQPGRFAKLLLRLP---ALRSIGLKCLEHLFFFKLIGDTPI---
+-DTFLMEML------
+>2p1t_A:(83-262)/1-177 Retinoic acid receptor RXR-alpha; protein-ligand complex,   E=2e-15 s/c=0.44 id=30% cov=66%
+------------------------------------------------------------
+----------------------LVEWAKRIPHFSELPLDDQVILLRAGWNELLIASFSHR
+S--IAVKDG-I------------------------LLAT-GLHVHRNSAH-SAG--VG-A
+IFDRVLTELVSKMRDMQMDKTELGCLRAIVLFNPDS--------KGLSNPAEVEALREKV
+YASLEAYC---KHKYPEQPGRFAKLLLRLP---ALRSIGLKCLEHLFFFKLIGDTPI---
+-DTFLMEML------
+>2nxx_A:(83-262)/1-177 Ultraspiracle (USP, NR2B4); hormone receptor, APO and holo   E=5e-12 s/c=0.38 id=29% cov=66%
+------------------------------------------------------------
+----------------------LVQWAKLVPHFTSLPLTDQVQLLRAGWNELLIAAFSHR
+S--MQAQDA-I------------------------VLAT-GLTVNKSTAH-AVG--VG-N
+IYDRVLSELVNKMKEMKMDKTELGCLRAIILYNPDV--------RGIKSVQEVEMLREKI
+YGVLEEYT---RTTHPNEPGRFAKLLLRLP---ALRSIGLKCLEHLFFFKLIGDVPI---
+-DTFLMEML------
+>1pdu_A:(30-264)/1-230 DHR38, nuclear hormone receptor HR38; nuclear receptor,   E=3e-63 s/c=1.03 id=56% cov=87%
+-----------------------------LITALVRSHVDTTPDPSCLDYSHYEEQSM--
+---SEADKVQQFYQLLTSSVDVIKQFAEKIPGYFDLLPEDQELLFQSASLELFVLRLAYR
+A--RIDDTK-L------------------------IFCN-GTVLHRTQCLRSFG-----E
+WLNDIM-EFSRSLHNLEIDISAFACLCALTLIT-ER--------HGLREPKKVEQLQMKI
+IGSLRDHV-TYNAEAQKKQHYFSRLLGKLP---ELRSLSVQGLQRIFYLKLEDLVPA---
+-PALIENMFVTTLPF
+>1yje_A:(1-264)/1-264 Orphan nuclear receptor NR4A1; NGFI-B, NUR77, ligand-binding   E=1e-130 s/c=1.74 id=100% cov=100%
+GSSHHHHHHSSGLVPRGSHMQPPDASPTNLLTSLIRAHLDSGPNTAKLDYSKFQELVLPR
+FGKEDAGDVQQFYDLLSGSLDVIRKWAEKIPGFIELSPGDQDLLLESAFLELFILRLAYR
+S--KPGEGK-L------------------------IFCS-GLVLHRLQC--ARG--FG-D
+WIDNIL-AFSRSLHSLGVDVPAFACLSALVLIT-DR--------HGLQDPRRVEELQNRI
+ASCLKEHM-AAVAGDPQPASCLSRLLGKLP---ELRTLCTQGLQRIFCLKLEDLVPP---
+-PPIVDKIFMDTLSF
+>1ovl_A:(33-264)/1-232 Orphan nuclear receptor NURR1 (MSe 414, 496, 511); NUUR1,   E=3e-78 s/c=1.24 id=63% cov=88%
+--------------------------------ALVRAHVDSNPAMTSLDYSRFQANPDYQ
+MSGDDTQHIQQFYDLLTGSMEIIRGWAEKIPGFADLPKADQDLLFESAFLELFVLRLAYR
+S--NPVEGK-L------------------------IFCN-GVVLHRLQC--VRG--FG-E
+WIDSIV-EFSSNLQNMNIDISAFSCIAALAMVT-ER--------HGLKEPKRVEELQNKI
+VNCLKDHV-TFNNGGLNRPNYLSKLLGKLP---ELRTLCTQGLQRIFYLKLEDLVPP---
+-PAIIDKLFLDTLPF
+>1t7r_A:(83-221)/1-142 Androgen receptor; nuclear receptor, transcription factor,   E=0.002 s/c=0.27 id=26% cov=52%
+------------------------------------------------------------
+----------------------VVKWAKALPGFRNLHVDDQMAVIQYSWMGLMVFAMGWR
+SFTNVNSRM-L------------------------YFAP-DLVFNEYRMH-KSR--MY-S
+QCVRMR-HLSQEFGWLQITPQEFLCMKALLLFSIIPV-------DGLKNQKFFDELRMNY
+IKELDRIIACKRKNPTSCSRRF--------------------------------------
+---------------
+>3mnp_A:(85-194)/1-115 Glucocorticoid receptor; protein-ligand complex, steroid   E=0.003 s/c=0.33 id=29% cov=41%
+------------------------------------------------------------
+------------------------KWAKAIPGFRNLHLDDQMTLLQYSWMFLMVFALGWR
+SYRQASGNL-L------------------------CFAP-DLIINEQRMT-LPC--MY-D
+QCKHML-FISTELQRLQVSYEEYLCMKTLLLLSSVPK-------EGLKSQELFDEIR---
+------------------------------------------------------------
+---------------
+>2ocf_A:(83-249)/1-179 Estrogen receptor; estrogen receptor, LBD, monobody,   E=2e-13 s/c=0.40 id=31% cov=63%
+------------------------------------------------------------
+----------------------MINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWR
+S--MEHPGK-L------------------------LFAP-NLLLDRNQGKCVEG--MV-E
+IFDMLL-ATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKI
+TDTLIHLMAKAGLTLQQQHQRLAQLLLILS---HIRHMSNKGMEHLYSMKCKNVVP----
+---------------
+>1xpc_A:(83-249)/1-179 Estrogen receptor; nuclear receptor, transcription factor,   E=7e-13 s/c=0.39 id=31% cov=63%
+------------------------------------------------------------
+----------------------MINWAKRVPGFVDLTLHDQVHLLECAWLEILMIGLVWR
+S--MEHPGK-L------------------------LFAP-NLLLDRNQGKCVEG--MV-E
+IFDMLL-ATSSRFRMMNLQGEEFVCLKSIILLNSGVYTFLSSTLKSLEEKDHIHRVLDKI
+TDTLIHLMAKAGLTLQQQHQRLAQLLLILS---HIRHMSNKGMEHLYSMKCKNVVP----
+---------------
+>3ltx_A:(69-138)/1-71 Estrogen receptor; constitutive, nuclear receptor,   E=9e-05 s/c=0.60 id=37% cov=27%
+------------------------------------------------------------
+--------LNSLVKLAERELVHLINWAKNVPGYTDLSLSDQVHLIECCWMELLLLNCAFR
+S--IEHGGKSL------------------------AFAP-DLVLDR--------------
+------------------------------------------------------------
+------------------------------------------------------------
+---------------
+>1l2j_A:(12-249)/1-240 Estrogen receptor beta; nuclear receptor, transcription   E=6e-15 s/c=0.32 id=33% cov=86%
+--------------------GLVPRGSHMRELLLDALSPEQLVLTLLEAEPPHVLISRPS
+APFTEASMMMSLTKLADKELVHMISWAKKIPGFVELSLFDQVRLLESCWMEVLMMGLMWR
+S--IDHPGK-L------------------------IFAP-DLVLDRDEGKCVEG--IL-E
+IFDMLL-ATTSRFRELKLQHKEYLCVKAMILLNSSMYPLVTAT-QDADSSRKLAHLLNAV
+TDALVWVIAKSGISSQQQSMRLANLLMLLS---HVRHASNKGMEHLLNMKCKNVVP----
+---------------
+>1yye_A:(83-249)/1-178 ER-beta, estrogen receptor beta; ER-beta, nuclear receptor,   E=3e-13 s/c=0.40 id=33% cov=63%
+------------------------------------------------------------
+----------------------MISWAKKIPGFVELSLFDQVRLLESCWMEVLMMGLMWR
+S--IDHPGK-L------------------------IFAP-DLVLDRDEGKCVEG--IL-E
+IFDMLL-ATTSRFRELKLQHKEYLCVKAMILLNSSMYPLVTAT-QDADSSRKLAHLLNAV
+TDALVWVIAKSGISSQQQSMRLANLLMLLS---HVRHASNKGMEHLLNMKCKNVVP----
+---------------
+>3oll_A:(83-249)/1-178 Estrogen receptor beta; steroid binding, phosphorylation,   E=1e-12 s/c=0.39 id=33% cov=63%
+------------------------------------------------------------
+----------------------MISWAKKIPGFVELSLFDQVRLLESCWMEVLMMGLMWR
+S--IDHPGK-L------------------------IFAP-DLVLDRDEGKCVEG--IL-E
+IFDMLL-ATTSRFRELKLQHKEYLCVKAMILLNSSMYPLVTAT-QDADSSRKLAHLLNAV
+TDALVWVIAKSGISSQQQSMRLANLLMLLS---HVRHASNKGMEHLLNMKCKNVVP----
+---------------
+>2e2r_A:(59-262)/1-200 Estrogen-related receptor gamma; ERR gamma, BPA, nuclear   E=7e-15 s/c=0.38 id=32% cov=75%
+----------------------------------------------------------PT
+VPDSDIKALTTLCDLADRELVVIIGWAKHIPGFSTLSLADQMSLLQSAWMEILILGVVYR
+S--LSFEDE-L------------------------VYAD-DYIMDEDQSK-LAG--LL-D
+LNNAIL-QLVKKYKSMKLEKEEFVTLKAIALANSDS--------MHIEDVEAVQKLQDVL
+HEALQDYE---AGQHMEDPRRAGKMLMTLP---LLRQTSTKAVQHFYNIKLEGKVPM---
+-HKLFLEML------
+>3k6p_A:(69-203)/1-137 Steroid hormone receptor ERR1; estrogen related receptor   E=3e-09 s/c=0.42 id=33% cov=51%
+------------------------------------------------------------
+--------VATLCDLFDREIVVTISWAKSIPGFSSLSLSDQMSVLQSVWMEVLVLGVAQR
+S--LPLQDE-L------------------------AFAE-DLVLDEEGAR-AAG--LG-E
+LGAALL-QLVRRLQALRLEREEYVLLKALALANSDS--------VHIEDAEAVEQLREAL
+HEALLE------------------------------------------------------
+---------------
+>2hc4_A:(74-258)/1-189 Vitamin D receptor; alpha helical sandwich, gene regulation;   E=4e-09 s/c=0.30 id=28% cov=69%
+------------------------------------------------------------
+-------------DLVSYSIQKVIGFAKMIPGFRDLTAEDQIALLKSSAIEIIMLRSNQS
+F--SLEDMSWS------------------------CGGP-DFKYCINDVT-KAG--HTLE
+LLEPLV-KFQVGLKKLKLHEEEHVLLMAICLLSPDR--------PGVQDHVRIEALQDRL
+CDVLQAYI---RIQHPGGRLLYAKMIQKLA---DLRSLNEEHSKQYRSLSFQPEHSM--Q
+LTPLVLEVF------
+>2o4j_A:(30-264)/1-247 Vitamin D3 receptor; nuclear receptor-ligand complex,   E=4e-09 s/c=0.23 id=25% cov=87%
+-----------------------IIAILLDAHHKTYDPTYADFRDFRPPVRMDGSTGSVT
+LDLSPLSMLPHLADLVSYSIQKVIGFAKMIPGFRDLTSDDQIVLLKSSAIEVIMLRSNQS
+F--TMDDMSWD------------------------CGSQ-DYKYDVTDVS-KAG--HTLE
+LIEPLI-KFQVGLKKLNLHEEEHVLLMAICIVSPDR--------PGVQDAKLVEAIQDRL
+SNTLQTYI-RCRHPPPGSHQLYAKMIQKLA---DLRSLNEEHSKQYRSLSFQPENSM--K
+LTPLVLEVFGNEISL
+>3b0t_A:(30-245)/1-226 Vitamin D3 receptor; nuclear receptor, transcription, gene   E=7e-09 s/c=0.25 id=26% cov=80%
+-----------------------IIAILLDAHHKTYDPTYSDFCQFRPPVRVNDGGGSVT
+LELSQLSMLPHLADLVSYSIQKVIGFAKMIPGFRDLTSEDQIVLLKSSAIEVIMLRSNES
+F--TMDDMSWT------------------------CGNQ-DYKYRVSDVT-KAG--HSLE
+LIEPLI-KFQVGLKKLNLHEEEHVLLMAICIVSPDR--------PGVQDAALIEAIQDRL
+SNTLQTYI-RCRHPPPGSHLLYAKMIQKLA---DLRSLNEEHSKQYRCLSFQ--------
+---------------
+>1nrl_A:(62-258)/1-197 Orphan nuclear receptor PXR; PXR, xenobiotic, SRC-1, ligand   E=9e-06 s/c=0.24 id=29% cov=72%
+------------------------------------------------------------
+-GKEIFSLLPHMADMSTYMFKGIISFAKVISYFRDLPIEDQISLLKGAAFELCQLRFNTV
+F--NAETGT--------------------------WECG-RLSYCLEDT--AGG--FQQL
+LLEPML-KFHYMLKKLQLHEEEYVLMQAISLFSPDR--------PGVLQHRVVDQLQEQF
+AITLKSYI-ECNRPQPAHRFLFLKIMAMLT---ELRSINAQHTQRLLRIQDIHPFA----
+-TPLMQELF------
+>1xvp_B:(69-231)/1-165 Orphan nuclear receptor NR1I3; CAR, RXR, citco, SRC1, DNA   E=0.0002 s/c=0.26 id=25% cov=60%
+------------------------------------------------------------
+--------VTHFADINTFMVLQVIKFTKDLPVFRSLPIEDQISLLKGAAVEICHIVLNTT
+F--CLQTQN--------------------------FLCG-PLRYTIEDGA-RVG--FQVE
+FLELLF-HFHGTLRKLQLQEPEYVLLAAMALFSPDR--------PGVTQRDEIDQLQEEM
+ALTLQSYI-KGQQRRPRDRFLYAKLLGLLA---ELRSI----------------------
+---------------
+>3ilz_A:(58-260)/1-204 Thyroid hormone receptor, alpha isoform 1 variant; nuclear   E=3e-12 s/c=0.33 id=29% cov=75%
+---------------------------------------------------------MPD
+GDKVDLEAFSEFTKIITPAITRVVDFAKKLPMFSELPXEDQIILLKGCCMEIMSLRAAVR
+Y--DPESDT-L------------------------TLSG-EMAVKREQLK-NGG--LG-V
+VSDAIF-ELGKSLSAFNLDDTEVALLQAVLLMSTDR--------SGLLXVDKIEKSQEAY
+LLAFEHYV---NHRKHNIPHFWPKLLMKVT---DLRMIGAXHASRFLHMKVEXPTEL---
+FPPLFLEVFED----
+>1fcy_A:(65-258)/1-194 RAR-gamma-1, retinoic acid receptor gamma-1; isotype   E=5e-18 s/c=0.45 id=34% cov=73%
+------------------------------------------------------------
+----DLGLWDKFSELATKCIIKIVEFAKRLPGFTGLSIADQITLLKAACLDILMLRICTR
+Y--TPEQDT-M------------------------TFSD-GLTLNRTQMH-NAG--FG-P
+LTDLVF-AFAGQLLPLEMDDTETGLLSAICLICGDR--------MDLEEPEKVDKLQEPL
+LEALRLYA---RRRRPSQPYMFPRMLMKIT---DLRGISTKGAERAITLKMEIPGPM---
+-PPLIREML------
+>3kmr_A:(12-258)/1-247 Retinoic acid receptor alpha; nuclear receptor transcription   E=3e-20 s/c=0.38 id=32% cov=91%
+-----------GLVPRGSHESYTLTPEVGELIEKVRKAHQETFPALCQLGKYTTNNSSEQ
+RVSLDIDLWDKFSELSTKCIIKTVEFAKQLPGFTTLTIADQITLLKAACLDILILRICTR
+Y--TPEQDT-M------------------------TFSD-GLTLNRTQMH-NAG--FG-P
+LTDLVF-AFANQLLPLEMDDAETGLLSAICLICGDR--------QDLEQPDRVDMLQEPL
+LEALKVYV---RKRRPSRPHMFPKMLMKIT---DLRSISAKGAERVITLKMEIPGSM---
+-PPLIQEML------
+>1xdk_B:(65-258)/1-194 RAR-beta, retinoic acid receptor, beta; nuclear receptor,   E=4e-19 s/c=0.46 id=32% cov=73%
+------------------------------------------------------------
+----DLGLWDKFSELATKCIIKIVEFAKRLPGFTGLTIADQITLLKAACLDILILRICTR
+Y--TPEQDT-M------------------------TFSD-GLTLNRTQMH-NAG--FG-P
+LTDLVF-TFANQLLPLEMDDTETGLLSAICLICGDR--------QDLEEPTKVDKLQEPL
+LEALKIYI---RKRRPSKPHMFPKILMKIT---DLRSISAKGAERVITLKMEIPGSM---
+-PPLIQEML------
+>1osh_A:(74-231)/1-155 BIle acid receptor; nuclear receptor, ligand binding domain,   E=5e-09 s/c=0.37 id=32% cov=56%
+------------------------------------------------------------
+-------------EMATNHVQVLVEFTKKLPGFQTLDHEDQIALLKGSAVEAMFLRSAEI
+F--NKKLPS-----------------------------G-HSDLLEERIR-NSG--ISDE
+YITPMF-SFYKSIGELKMTQEEYALLTAIVILSPDR--------QYIKDREAVEKLQEPL
+LDVLQKLC---KIHQPENPQHFACLLGRLT---ELRTF----------------------
+---------------
+>3ipq_A:(59-258)/1-200 Oxysterols receptor LXR-alpha; LXR homodimer, LXR signaling,   E=5e-14 s/c=0.37 id=30% cov=75%
+----------------------------------------------------------PH
+SREARQQRFAHFTELAIVSVQEIVDFAKQLPGFLQLSREDQIALLKTSAIEVMLLETSRR
+Y--NPGSES-I------------------------TFLK-DFSYNREDFA-KAG--LQVE
+FINPIF-EFSRAMNELQLNDAEFALLIAISIFSADR--------PNVQDQLQVERLQHTY
+VEALHAYV---SIHHPHDRLMFPRMLMKLV---SLRTLSSVHSEQVFALRLQDKKL----
+-PPLLSEIW------
+>2r40_D:(79-258)/1-181 Ecdysone receptor, 20-hydroxy-ecdysone receptor; nuclear   E=4e-14 s/c=0.41 id=30% cov=68%
+------------------------------------------------------------
+------------------TVQLIVEFAKGLPGFAKISQSDQITLLKACSSEVMMLRVARR
+Y--DAATDS-V------------------------LFAN-NQAYTRDNYR-KAG--MA-Y
+VIEDLL-HFCRCMYSMMMDNVHYALLTAIVIFS-DR--------PGLEQPLLVEEIQRYY
+LNTLRVYILNQNSASPRCAVIFGKILGILT---EIRTLGMQNSNMCISLKLKNRKL----
+-PPFLEEIW------
+>2nxx_E:(79-258)/1-179 Ecdysone receptor (ECR, NRH1); hormone receptor, APO and   E=8e-14 s/c=0.41 id=30% cov=67%
+------------------------------------------------------------
+------------------TVQLIVEFAKRLPGFDKLLREDQIALLKACSSEVMMFRMARR
+Y--DVQTDS-I------------------------LFVN-NQPYSRDSYN-LAG--MG-E
+TIEDLL-HFCRTMYSMRVDNAEYALLTAIVIFS-ER--------PALIEGWKVEKIQEIY
+LEALRAYV--DNRRKPKPGTIFAKLLSVLT---ELRTLGNQNSEMCFSLKLKNKKL----
+-PPFLAEIW------
+>1z5x_E:(79-263)/1-183 Ecdysone receptor ligand binding domain; ponasterone A,   E=1e-12 s/c=0.38 id=28% cov=69%
+------------------------------------------------------------
+------------------TVQLIVEFSKRLPGFDKLIREDQIALLKACSSEVMMFRMARR
+Y--DAETDS-I------------------------LFAT-NQPYTRESYT-VAG--MG-D
+TVEDLL-RFCRHMCAMKVDNAEYALLTAIVIFS-ER--------PSLSEGWKVEKIQEIY
+IEALKAYV--ENRRKPYATTIFAKLLSVLT---ELRTLGNMNSETCFSLKLKNRKV----
+-PSFLEEIWDVVS--
+>3dzy_D:(80-260)/1-183 Peroxisome proliferator-activated receptor gamma;   E=3e-09 s/c=0.32 id=27% cov=67%
+------------------------------------------------------------
+-------------------VQEITEYAKSIPGFVNLDLNDQVTLLKYGVHEIIYTMLAS-
+---LMNKDG-V------------------------LISE-GQGFMTREFLKSLRKPFG-D
+FMEPKF-EFAVKFNALELDDSDLAIFIAVIILSGDR--------PGLLNVKPIEDIQDNL
+LQALELQL---KLNHPESSQLFAKLLQKMT---DLRQIVTEHVQLLQVIKKTETDMS---
+LHPLLQEIYKD----
+>3u9q_A:(80-260)/1-183 Peroxisome proliferator-activated receptor gamma; nuclear   E=5e-09 s/c=0.31 id=27% cov=67%
+------------------------------------------------------------
+-------------------VQEITEYAKSIPGFVNLDLNDQVTLLKYGVHEIIYTMLAS-
+---LMNKDG-V------------------------LISE-GQGFMTREFLKSLRKPFG-D
+FMEPKF-EFAVKFNALELDDSDLAIFIAVIILSGDR--------PGLLNVKPIEDIQDNL
+LQALELQL---KLNHPESSQLFAKLLQKMT---DLRQIVTEHVQLLQVIKKTETDMS---
+LHPLLQEIYKD----
+>2p54_A:(79-260)/1-184 PPAR-alpha, peroxisome proliferator-activated receptor   E=6e-08 s/c=0.29 id=23% cov=68%
+------------------------------------------------------------
+------------------TVTELTEFAKAIPGFANLDLNDQVTLLKYGVYEAIFAMLSS-
+---VMNKDG-M------------------------LVAYGNGFITREFLKSLRK--PFCD
+IMEPKF-DFAMKFNALELDDSDISLFVAAIICCGDR--------PGLLNVGHIEKMQEGI
+VHVLRLHL---QSNHPDDIFLFPKLLQKMA---DLRQLVTEHAQLVQIIKKTESDAA---
+LHPLLQEIYRD----
+>3cqv_A:(70-231)/1-162 Nuclear receptor subfamily 1 group D member 2; reverb beta,   E=2e-13 s/c=0.44 id=31% cov=60%
+------------------------------------------------------------
+---------EEFSMSFTPAVKEVVEFAKRIPGFRDLSQHDQVNLLKAGTFEVLMVRFASL
+F--DAKERT-V------------------------TFLS-GKKYSVDDLH-SMG--AG-D
+LLNSMF-EFSEKLNALQLSDEEMSLFTAVVLVSADR--------SGIENVNSVEALQETL
+IRALRTLI---MKNHPNEASIFTKLLLKLP---DLRSL----------------------
+---------------
+>3n00_A:(23-231)/1-219 REV-ERBA-alpha; reverba ncorid1, anti-parallel B-sheet,   E=7e-12 s/c=0.30 id=29% cov=78%
+------------PEPTVEDVISQVARAHREIFTYAHDKLGSSPGNFNANHASGSPYPHGR
+SGRTVQEIWEDFSMSFTPAVREVVEFAKHIPGFRDLSQHDQVTLLKAGTFEVLMVRFASL
+F--NVKDQT-V------------------------MFLS-RTTYSLQELG-AMG--MG-D
+LLSAMF-DFSEKLNSLALTEEELGLFTAVVLVSADR--------SGMENSASVEQLQETL
+LRALRALV---LKNRPLETSRFTKLLLKLP---DLRTL----------------------
+---------------
+>3l0l_A:(76-258)/1-183 Nuclear receptor ROR-gamma; nuclear receptor, rorgamma,   E=1e-10 s/c=0.34 id=33% cov=65%
+------------------------------------------------------------
+---------------LTEAIQYVVEFAKRLSGFMELCQNDQIVLLKAGAMEVVLVRMCRA
+Y--NADNRT--------------------------VFFE-GKYGGMELFR-ALG--CS-E
+LISSIF-DFSHSLSALHFSEDEIALYTALVLINAHR--------PGLQEKRKVEQLQYNL
+ELAFHHHL---------CKTHRQSILAKLPPKGKLRSLCSQHVERLQIFQHLHPIVVQAA
+FPPLYKELF------
+>1nq7_A:(76-258)/1-177 Nuclear receptor ROR-beta; ligand-binding domain, retinoids,   E=9e-11 s/c=0.36 id=28% cov=67%
+------------------------------------------------------------
+---------------ITHAIQYVVEFAKRITGFMELCQNDQILLLKSGCLEVVLVRMCRA
+F--NPLNNT-V------------------------LF-E-GKYGGMQMFK-ALG--SD-D
+LVNEAF-DFAKNLCSLQLTEEEIALFSSAVLISPDR--------AWLLEPRKVQKLQEKI
+YFALQHVI----QKNHLDDETLAKLIAKIP---TITAVCNLHGEKLQVFKQSHPDIV---
+-----NTLF------
+>1n83_A:(76-258)/1-185 Nuclear receptor ROR-alpha; three-layered alpha helical   E=1e-10 s/c=0.34 id=27% cov=68%
+------------------------------------------------------------
+---------------ITEAIQYVVEFAKRIDGFMELCQNDQIVLLKAGSLEVVFIRMCRA
+F--DSQNNT--------------------------VYFD-GKYASPDVFK-SLG--CE-D
+FISFVF-EFGKSLCSMHLTEDEIALFSAFVLMSADR--------SWLQEKVKIEKLQQKI
+QLALQHVL----QKNHREDGILTKLICKVS---TLRALCGRHTEKLMAFKAIYPDIVRLH
+FPPLYKELF------
