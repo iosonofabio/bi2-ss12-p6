@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper,notitlepage,onecolumn]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Author}{Fabio Zanini}
+\newcommand{\Title}{Search and alignment}
+\newcommand{\Keywords}{{bioinformatics}, {project}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[top=2cm]{geometry}
+\usepackage{amsmath,amsfonts,amssymb,eucal,eurosym}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[font=small, format=hang, labelfont={sf,bf}, figurename=Fig.]{caption}
+\usepackage{cite}
+%\usepackage{epigraph}
+%\setlength{\epigraphwidth}{.55\textwidth}
+%\setlength{\epigraphrule}{0pt}
+%\usepackage{multirow}
+%\usepackage[version=3]{mhchem}
+%\usepackage{sagetex}
+\usepackage[	colorlinks,linkcolor=red,citecolor=red]{hyperref}
+\hypersetup{	pdfauthor={\Author}, pdftitle={\Title}, pdfkeywords={\Keywords}	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\graphicspath{{./figures/}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\DeclareMathOperator\de{d\!}
+%\newcommand{\comment}[1]{\textit{\textcolor{red}{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\Title}
+\author{\Author}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+
+The given sequence is taken from the PDB entry 1YJE (\url{http://www.rcsb.org/pdb/explore/explore.do?structureId=1YJE}). The paper that describes it is Ref.~\cite{flaig_structural_2005}. I checked this by diff the text files, exactly the same label even.
+
+CSBlasting it against the non-redundant PDB using Lupas's toolkit reports quite a few sequences with a reasonably low e-value (number of entries that are reported by chance, according to Ref.~\cite{karlin_methods_1990}). CSBlast also outputs an MSA of the sequences, so I could check directly how closely related they were to our ``unknown'' sequence:
+\begin{enumerate}
+ \item the first sequence is ours, found back from the PDB;
+ \item the next ones, up to $e\sim 0.01$, have reasonable chunks in common with our sequence;
+ \item the remaining ones have only a domain in common, either at the N-terminus or in the middle.
+\end{enumerate}
+
+I therefore selected only the first ones ($e < 0.01$) and aligned them using MUSCLE with 6 iterations. It took 3 seconds, meaning that they were already aligned \texttt{:-)}. Now we should go for modeller.
+
+\bibliographystyle{plain}
+\bibliography{search_alignment}
+
+
+
+
+\end{document}
+
