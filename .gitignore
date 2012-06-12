@@ -1,3 +1,7 @@
+# Modeller temporary files
+data/tmp/*
+
+
 *.py[co]
 
 # Packages
