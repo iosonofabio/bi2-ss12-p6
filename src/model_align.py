@@ -15,7 +15,7 @@ from modeller.automodel import *
 #the environment object is needed to do pretty much everything
 env = environ()
  #.pdb files must be stored herein
-env.io.atom_files_directory = ['./data/pdb/']
+env.io.atom_files_directory = ['./data/templates/pdb/']
 aln = alignment(env)
 
 #we initialize a new model for 3tx7, a protein with a known structure.
