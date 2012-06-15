@@ -43,7 +43,18 @@
 \end{figure}
 I have written a script that uses more than one model into a sequence/structure MSA and then threads our unknown sequence onto the alignment of all structures (somehow). An example using only two templates is shown in \figurename~\ref{fig:1yje_A-multiple_n_2}.
 
-We still need to ``present results in a convenient way'', whatever that means. I'll write a small pymol script that outputs figures of a) the original structure with the predicted one and b) all templates with the predicted one.
+\begin{figure}[h!]
+ \begin{center}
+  \includegraphics[width=0.45\linewidth]{prediction_truth.png}
+  \includegraphics[width=0.45\linewidth]{prediction_templates.png}
+  \caption{Example of a mult5iple model, our unknown sequence threaded onto ten similar PDB entries. Left hand side: the predicted structure against the true one; right hand side: the same against all ten models. Colors: red = our model, gold = true structure, other = templates.}
+  \label{fig:tt}
+ \end{center}
+\end{figure}
+ I have also written a small pymol script that outputs figures of a) the original structure with the predicted one and b) all templates with the predicted one. The results are presented in \figurename~\ref{fig:tt}.
+
+We still need to ``present results in a convenient way''. According to Sven's hint, this should amount to calculate overlap between our predicted sites and the true structure, or the templates...? The latter seems to be a silly way of evaulating a prediction, but -- oh, well.
+
 
 \end{document}
 

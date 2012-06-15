@@ -18,7 +18,7 @@ from read_templates import read_templates, get_tplname
 # Tables
 defaultseqfile = '../starting_sequence/pir/1yje_A.ali'
 # Number of templates to use (for performance reasons)
-n_templates = 2
+n_templates = 10
 
 
 # Script
@@ -36,38 +36,42 @@ if __name__ == '__main__':
         #.pdb files must be stored herein
         env.io.atom_files_directory = ['../templates/pdb/']
     
+
         # align the unknown sequence with all templates
-        aln = alignment(env)
-        templates = read_templates('../templates/most_relevant.dat')[:n_templates]
-        n_templates = len(templates)
-        for template in templates:
-            id = template['id']
-            chain = template['chain']
-            tplname = get_tplname(template)
-    
-            mdl = model(env, file=id, model_segment=('FIRST:'+chain, 'LAST:'+chain))
-            aln.append_model(mdl, align_codes=tplname, atom_files=id+'.pdb')
-        
-        # add the unknown sequence to the alignment.
         seqname = (os.path.basename(seqfile).split('.')[0])
         seqname = seqname[:-1]+seqname[-1].upper()
-        aln.append(file=seqfile, align_codes=seqname)
+        templates = read_templates('../templates/most_relevant.dat')[:n_templates]
+        n_templates = len(templates)
+
+        # check whether the alignment exists already
+        if not os.path.isfile(seqname+'-multiple_n_'+str(n_templates)+'.ali'):
+            aln = alignment(env)
+            for template in templates:
+                id = template['id']
+                chain = template['chain']
+                tplname = get_tplname(template)
         
-        # Align sequence-structures
-        # Note: align2d is obsolete! --> salign
-        # Parameters
-        # - gap_function makes the gaps in the MSA dependent on the structural
-        #   context
-        aln.salign(gap_function=True)
-    
-        # store the alignment
-        aln.write(file=seqname+'-multiple_n_'+str(n_templates)+'.ali', alignment_format='PIR')
+                mdl = model(env, file=id, model_segment=('FIRST:'+chain, 'LAST:'+chain))
+                aln.append_model(mdl, align_codes=tplname, atom_files=id+'.pdb')
+            
+            # add the unknown sequence to the alignment.
+            aln.append(file=seqfile, align_codes=seqname)
+            
+            # Align sequence-structures
+            # Note: align2d is obsolete! --> salign
+            # Parameters
+            # - gap_function makes the gaps in the MSA dependent on the structural
+            #   context
+            aln.salign(gap_function=True)
         
-    
+            # store the alignment
+            aln.write(file=seqname+'-multiple_n_'+str(n_templates)+'.ali', alignment_format='PIR')
+            
+        
         #automodel reads the alignment file and actually does the homology modeling for us.
         #the output is a .pdb file, to be seen in a.outputs.
         a = automodel(env,
-                      alnfile = seqname+'-multiple.ali',
+                      alnfile = seqname+'-multiple_n_'+str(n_templates)+'.ali',
                       knowns = map(get_tplname, templates),
                       sequence = seqname)
         
