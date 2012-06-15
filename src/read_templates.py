@@ -20,6 +20,14 @@ def read_templates(templatefilename=None):
 
     return templates
 
+
+def get_tplname(template):
+    '''Return the typical align_code for a template'''
+    id = template['id']
+    chain = template['chain']
+    return id.lower()+'_'+chain
+
+
 # Script
 if __name__ == '__main__':
 

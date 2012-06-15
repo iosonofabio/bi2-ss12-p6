@@ -6,14 +6,22 @@ content:    Align and model an unknown sequence onto several templates.
 
 Note: please start this script from the root folder of the project.
 '''
+# Modules
 import os
 import shutil
 from modeller import *
 from modeller.automodel import *
 
+from read_templates import read_templates
+
+
+
 # Tables
 defaultseqfile = '../starting_sequence/pir/1yje_A.ali'
 
+
+
+# Script
 if __name__ == '__main__':
     seqfile = defaultseqfile
 
@@ -29,7 +37,6 @@ if __name__ == '__main__':
     aln = alignment(env)
     
     # get all templates
-    from read_templates import read_templates
     templates = read_templates('../templates/most_relevant.dat')
     
     # do one prediction per template (we will need to integrate them later on)
@@ -44,7 +51,7 @@ if __name__ == '__main__':
         mdl = model(env, file=id, model_segment=('FIRST:'+chain,'LAST:'+chain))
         aln.append_model(mdl, align_codes=tplname, atom_files=id+'.pdb')
     
-        #we add the sequence for 1yje to the alignment.
+        # add the unknown sequence to the alignment.
         seqname = (os.path.basename(seqfile).split('.')[0])
         seqname = seqname[:-1]+seqname[-1].upper()
         aln.append(file=seqfile, align_codes=seqname)
