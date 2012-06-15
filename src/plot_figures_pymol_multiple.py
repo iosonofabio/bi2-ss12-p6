@@ -21,7 +21,7 @@ from read_templates import read_templates, get_tplname
 
 # Tables
 pdb_folder = '../data/templates/pdb/'
-n_templates = 2
+n_templates = 15
 
 
 
@@ -52,7 +52,15 @@ def plot_prediction_templates(n_templates_plot=2):
         pymol.cmd.align(id, predid)
 
     pymol.cmd.hide(representation='line', selection='all')
-    pymol.cmd.show(representation='cartoon', selection='all')
+
+    
+    pymol.cmd.show(representation='cartoon', selection=predid)
+    for template in templates:
+        id = template['id'].upper()
+        chain = template['chain']
+        pymol.cmd.show(representation='cartoon',
+                       selection='('+id+' and chain '+chain+')')
+
     pymol.cmd.center()
     pymol.cmd.bg_color('white')
 

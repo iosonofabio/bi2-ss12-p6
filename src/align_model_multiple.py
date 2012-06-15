@@ -18,8 +18,10 @@ from read_templates import read_templates, get_tplname
 # Tables
 defaultseqfile = '../starting_sequence/pir/1yje_A.ali'
 # Number of templates to use (for performance reasons)
-n_templates = 10
-
+n_templates = 15
+# The models are assessed using both measures, but DOPE decides the best model
+# in the end (see Shen and Sali 2006)
+assessment_models = ('DOPE', 'GA341')
 
 # Script
 if __name__ == '__main__':
@@ -68,23 +70,38 @@ if __name__ == '__main__':
             aln.write(file=seqname+'-multiple_n_'+str(n_templates)+'.ali', alignment_format='PIR')
             
         
-        #automodel reads the alignment file and actually does the homology modeling for us.
-        #the output is a .pdb file, to be seen in a.outputs.
+        # automodel reads the alignment file and actually does the homology modeling for us.
+        # the output is a .pdb file, to be seen in a.outputs.
+        # the parameter assess_methods is used to check the quality of the model
+        # (see also Kryshtafovych and Fidelis, 2009)
         a = automodel(env,
                       alnfile = seqname+'-multiple_n_'+str(n_templates)+'.ali',
                       knowns = map(get_tplname, templates),
-                      sequence = seqname)
+                      sequence = seqname,
+                      assess_methods=[getattr(assess, am) for am in assessment_models])
         
         # index of the first/last model
         # (determines how many models to calculate)
         a.starting_model= 1
-        a.ending_model = 1
+        a.ending_model = 3
         
         # do the actual homology modeling
         a.make()
     
+        # check the assessment score
+        for i in xrange(3):
+            print 'Model', i+1
+            for am in assessment_models:
+                scores = a.outputs[i][am+' score']
+                print am+' scores:\t'+str(scores)
+
+        # find top model
+        dope_scores = [o['DOPE score'] for o in a.outputs]
+        top_model_ind = dope_scores.index(max(dope_scores))
+
+
         # move the model into the results folder
-        modelname = a.outputs[0]['name']
+        modelname = a.outputs[top_model_ind]['name']
         if not os.path.isdir('../../results'):
             os.mkdir('../../results')
         shutil.move(modelname, '../../results/'+seqname+'-multiple_n_'+str(n_templates)+'.pdb')
