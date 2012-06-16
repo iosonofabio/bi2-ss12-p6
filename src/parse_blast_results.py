@@ -5,10 +5,10 @@ date:       13/06/12
 content:    Get the filtered MSA with the top scoring BLAST results, read the
             labels and save their names.
 '''
-defaultalnfile = 'data/alignment/most_relevant_aligned.fasta'
+defaultalnfile = 'data/blast/1623479_align_reduced.fasta'
 defaulttplfile = 'data/templates/most_relevant.dat'
 
-def parse_blast_results(alnfilename=None, templatefilename=None):
+def parse_blast_results(alnfilename=None, tplfilename=None):
     if alnfilename is None:
         alnfilename = defaultalnfile
     if tplfilename is None:

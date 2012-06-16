@@ -18,7 +18,7 @@ from read_templates import read_templates, get_tplname
 # Tables
 defaultseqfile = '../starting_sequence/pir/1yje_A.ali'
 # Number of templates to use (for performance reasons)
-n_templates = 15
+n_templates = 3
 # The models are assessed using both measures, but DOPE decides the best model
 # in the end (see Shen and Sali 2006)
 assessment_models = ('DOPE', 'GA341')
@@ -43,6 +43,7 @@ if __name__ == '__main__':
         seqname = (os.path.basename(seqfile).split('.')[0])
         seqname = seqname[:-1]+seqname[-1].upper()
         templates = read_templates('../templates/most_relevant.dat')[:n_templates]
+        templates = filter(lambda t: t['id'] != '1YJE', templates)
         n_templates = len(templates)
 
         # check whether the alignment exists already
@@ -89,10 +90,12 @@ if __name__ == '__main__':
         a.make()
     
         # check the assessment score
+        temp_scores = []
         for i in xrange(3):
             print 'Model', i+1
             for am in assessment_models:
                 scores = a.outputs[i][am+' score']
+                #modeller outputs this to align_model_multiple.log
                 print am+' scores:\t'+str(scores)
 
         # find top model
