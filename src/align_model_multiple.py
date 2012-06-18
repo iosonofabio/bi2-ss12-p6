@@ -42,7 +42,7 @@ if __name__ == '__main__':
         # align the unknown sequence with all templates
         seqname = (os.path.basename(seqfile).split('.')[0])
         seqname = seqname[:-1]+seqname[-1].upper()
-        templates = read_templates('../templates/most_relevant.dat')[:n_templates]
+        templates = read_templates('../templates/most_relevant.dat')[:n_templates+1]
         templates = filter(lambda t: t['id'] != '1YJE', templates)
         n_templates = len(templates)
 

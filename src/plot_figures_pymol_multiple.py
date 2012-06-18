@@ -43,7 +43,8 @@ def plot_prediction_templates(n_templates_plot=2):
 
 
     # Get the template codes
-    templates = read_templates('../data/templates/most_relevant.dat')[:n_templates_plot]
+    templates = read_templates('../data/templates/most_relevant.dat')[:n_templates_plot+1]
+    templates = filter(lambda t: t['id'] != '1YJE', templates)
 
     # Load structures
     for template in templates:
