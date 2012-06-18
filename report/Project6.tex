@@ -1,0 +1,155 @@
+
+
+\documentclass[]{report}   % list options between brackets
+
+%*****************************
+\usepackage{url}
+\usepackage{amsmath,amsfonts,amssymb,eucal,eurosym}        
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[font=small, format=hang, labelfont={sf,bf}, figurename=Fig.]{caption}
+\usepackage{cite}
+\usepackage{epigraph}
+\usepackage[	colorlinks,linkcolor=red,citecolor=red]{hyperref}
+%\usepackage{epigraph}
+%\setlength{\epigraphwidth}{.55\textwidth}
+%\setlength{\epigraphrule}{0pt}
+%\usepackage{multirow}
+%\usepackage[version=3]{mhchem}
+%\usepackage{sagetex}
+%\hypersetup{	pdf}
+
+%**********************************
+
+\begin{document}
+
+\title{Project No.6 - Comparative Modeling of Protein Structure}
+\author{Taylor Kessinger, Zarin Shakibaei, Fabio Zanini}   
+\date{18.06.12}
+\maketitle
+
+\begin{abstract}
+
+Modeller is a popular software tool for predicting protein structures using homology modeling–in this case, by satisfaction of spatial restraints derived from similar protein structures. We use Modeller to predict the structure of a protein sequence (PDB ID: \texttt{1yje}) by comparing it to a number of protein sequences with known structures. Sequence alignment and structure prediction can both be performed using built-in Modeller classes. We do so, then visualize the result using PyMol. The predicted structure is reasonably close to the true structure of the target.
+
+\end{abstract}
+
+\section*{Introduction}   
+
+The particular sequence of amino acids in a protein is not necessarily important except insofar as it determines the fold of a protein; proteins are thus more robust to changes at the sequence level than at the structural level. This yields the evolutionary result that protein structures are much more conserved than protein sequences. Homology modeling exploits this fact by fitting a desired protein sequence with a potentially unknown structure (the target) to any number of similar sequences with known structures (the templates). Given a good alignment between a target and template sequence, a very accurate structure can be predicted. Homology modeling is obviously most successful when the target and template have similar structures.
+
+The goal of this project is to predict the structure of a target, \texttt{1yje:A}, by using the Python homology modeling package, Modeller. As it happens, \texttt{1yje:A} has a known structure in the Protein Database (PDB) ~\cite{flaig1yje}, so it is possible to check the predicted structure against the experimentally determined one.
+ 
+\section*{Materials and Methods:}   
+
+\subsection*{Modeller overview}
+Modeller is a Python package that performs homology modeling by satisfaction of spatial restraints. The basic procedure is very simple:
+\begin{itemize}
+\item The target sequence is aligned against one or more template structures using the sequences and the .pdb file for the templates.
+\item Spatial features from the templates, such as dihedral angles, C$_\alpha$-C$_\alpha$ distances, and hydrogen bonds, are determined from the structures of the templates. These are used to derive spatial restraints on the target structure.~\cite{sali1994comparative}
+\item A model for the target structure is determined by satisfying these restraints.
+\end{itemize}
+ 
+One example of a ``spatial restraint" is described in~\cite{sali1994comparative}: If, say, a hydrogen bond to the main chain at a certain residue appears in all or many comparable template structures, it is reasonable to assume that it also appears in the target. In the original implementation of Modeller, ``reasonable to assume" means that a high probability is placed on this feature appearing in the target structure; probability density functions constraining stereochemistry, main- and side-chain conformations, amd so on are constructed, then combined into a single molecular pdf. Optimizing with respect to this pdf yields the most probable structure given the alignment. The conjugate gradient method is employed by Modeller for this optimization. Here, rather than rely on the molecular pdf, we employ a statistical potential optimized for model assessment, namely DOPE (Discrete Optimized Protein Energy).~\cite{DOPE}
+
+\subsection*{Initial search}
+CS-BLAST, or ``context-specific BLAST"~\cite{csblast}, an improved version of the Basic Local Alignment Search Tool~\cite{BLAST} that takes into account the context of neighboring amino acids in a sequence, was used to find initial matches. Due to the use of context information, CS-BLAST finds a higher number of remotely homologous sequences than BLAST does at a given error rate. A number of hits were returned, namely:
+\begin{itemize}
+\item The target sequence from the PDB.
+\item A number of hits with $e < 0.01$ with reasonable chunks in common with the target sequence.
+\item A number of hits with only a domain in common in the middle of the sequence or at the N-terminus. A large gap in $e$-value was visible between the previous hits and these.
+\end{itemize}
+
+Next, MUSCLE (MUltiple Sequence Comparison by Log-Expectation)~\cite{edgar2004muscle} was used to generate an initial multiple sequence alignment using the good ($e < 0.01$) matches. Six iterations of muscle took about three seconds, meaning the sequences were essentially already aligned.
+
+\subsection*{Input data and alignment} 
+
+Unfortunately, FASTA files are inappropriate for use with Modeller. This is for two reasons. The first is obvious: Modeller is a homology modeling package, so some information about the structure of template proteins is needed to generate a model. The second is less obvious: A FASTA alignment file does not contain information specifying which positions of the alignment correspond to which residues of the protein. To remedy this, Modeller's modeling capabilities require that input be provided in PIR (Protein Information Resource) format, which contains not only the aligned residues, but an extra comment line specifying the start and end position of the alignment.
+
+To this end, Modeller also contains its own alignment class. Modeller's aligning capabilities include several advantages; for example, gap penalties are lessened outside of secondary structures, based on the argument that secondary structures should be much less robust to insertions and deletions than unstructured parts of the protein. FASTA files can be converted into PIR format na\"ively, with the appropriate comment line added; this and the PDB files for the template sequences are the minimum requirements needed to generate an alignment. The \texttt{alignment.align2d()} function allows for a single sequence alignment; the \texttt{alignment.salign()} function enables a multiple sequence alignment. Both can save an alignment file in PIR format.
+
+\subsection*{Scripting}
+Modeller is a command-line only tool, and has no graphical user interface; instead, a script file containing Modeller commands should be provided. Once installed, Modeller can be called from the command line with the \texttt{mod9.10} command, which automatically calls Python and imports the necessary \texttt{modeller} module. The name of the desired script can be provided as an argument. Standard output is suppressed and saved to a .log file.
+
+Our program consists of several pieces of Python code. A brief outline is provided below.
+\begin{itemize}
+\item \texttt{parse\_blast\_results.py} contains the function \texttt{parse\_blast\_results}, which parses a FASTA file corresponding to our initial alignment and saves the sequence and chain IDs.
+\item \texttt{read\_templates.py} contains two functions; \texttt{read\_templates()}, which reads sequence and chain IDs and stores them in a dict, and \texttt{get\_tplname()}, which returns a typical alignment code name for a template.
+\item \texttt{model\_align.py} is a simple test file. It creates a \texttt{environ()} object, which is needed for all MODELLER scripts. It then aligns the target, \texttt{1yje:A}, against a random template, \texttt{3tx7:B}. The \texttt{automodel} class is invoked to generate a model pdb file.
+\item \texttt{align\_model\_all.py} is an improvement on \texttt{model\_align.py} that produces single alignments of the target against a range of templates, then performs the corresponding predictions.
+\item \texttt{model\_align\_multiple.py} generates an MSA of the target and the top three hits (those that are not simply copies of the target structure). It then invokes the \texttt{automodel} class, which assigns weights to the various templates based on their sequence identity with the target. The \texttt{assess\_methods} option allows DOPE scores to be output to the .log file.
+\item \texttt{plot\_figures\_pymol\_multiple.py}, which incorporates the Python structure visualization module \texttt{PyMol} to visualize a .pdb file. It must actually be called from within PyMol and has options to plot the predicted structure against template structures or the true structure, then save either to file.
+\end{itemize}
+
+The \texttt{automodel} class offers a wide range of options for incorporating water, disulfide bridges, and a variety of other features not incorporated by default, as well as refining only parts of the model. For our purposes, however, the default options sufficed.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.5]{output-15template.png}
+ \caption{Sample of a PDB file corresponding to \texttt{1yje:A}, constructed with 15 templates.}
+\end{center}
+\end{figure}
+
+\subsection*{Visualization}   
+
+Our PyMol script enables us to visualize the .pdb format outputs of our alignment and prediction script and compare it against the known structure of \texttt{1yje:A}. As a sanity check, we can also predict the structure of the target using itself as a template (since \texttt{1yje:A} has a structure in the PDB). Obviously, we expect to see a perfect match in that case, which we do, as can be seen by examining \figurename~\ref{fig:truevtrue}. This confirms that homology modeling is, at least \it{prima facie}\rm, a sensible approach, and that Modeller does what it claims to do.
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=0.8\linewidth]{real_vs_real.png}
+\caption{The target threaded onto itself. Colors: red = our model, salmon = true structure.}
+\label{fig:truevtrue}
+\end{center}
+\end{figure}
+
+We also show the results of threading the target onto the top two, top five, and top ten similar PDB entries, as ranked by $e$-value, in \figurename~\ref{fig:tt_2}, \figurename~\ref{fig:tt_5}, and \figurename~\ref{fig:tt_10}. A number of options are available for evaluating the quality of protein models ~\cite{krysh}. Our structures are each selected by generating three multi-template models and selecting the one with the top DOPE score. Notably, introducing the additional entries does not seem to improve the quality of the prediction that much. Even with only two templates, the quality is very high, however–only a few small flaws, such as the slightly wrong start position for a sheet or helix, are visible.
+
+\begin{figure}[h!]
+ \begin{center}
+  \includegraphics[width=0.45\linewidth]{2_templates_truth.png}
+  \includegraphics[width=0.45\linewidth]{2_templates.png}
+  \caption{A multiple-sequence model: Our unknown sequence threaded onto two similar PDB entries. Left: The predicted structure against the true one. Right: The same against all ten models. Colors: red = our model, green = true structure, other = templates.}
+  \label{fig:tt_2}
+ \end{center}
+\end{figure}
+
+
+\begin{figure}[h!]
+ \begin{center}
+  \includegraphics[width=0.45\linewidth]{5_templates_truth.png}
+  \includegraphics[width=0.45\linewidth]{5_templates.png}
+  \caption{A multiple-sequence model: Our unknown sequence threaded onto five similar PDB entries, including ones with lower sequence identity to our target. Left: The predicted structure against the true one. Right: The same against all five models. Colors: red = our model, fuchsia = true structure, other = templates.}
+  \label{fig:tt_5}
+ \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+ \begin{center}
+  \includegraphics[width=0.45\linewidth]{10_templates_truth.png}
+  \includegraphics[width=0.45\linewidth]{10_templates.png}
+  \caption{A multiple-sequence model: Our unknown sequence threaded onto ten similar PDB entries. Left: The predicted structure against the true one. Right: The same against all ten models. Colors: red = our model, purple = true structure, other = templates.}
+  \label{fig:tt_10}
+ \end{center}
+\end{figure}
+
+In each case, DOPE scores on the order of -30k result, confirming the accuracy of our predictions. Furthermore, the accuracy can be seen visually.
+
+\section*{Discussion:}   
+
+Homology modeling is a powerful tool for predicting the structure of unknown proteins. In fact, it has been suggested that the PDB is essentially complete enough to ``solve" the structure prediction problem, with the only limiting factor being inadequacies in sequence alignment~\cite{zhang2005protein}. This problem, too, may soon be fixed, as tools like CS-BLAST continue to improve the quality and number of hits than can be acquired. Here, we have successfully demonstrated the accuracy of homology modeling when known template structures are available.
+
+One obvious shortcoming of homology modeling is its inability to model proteins that have essentially no homologues. Examples include the venoms of many animals, which are relatively young proteins that are very specific to that particular animal. Since they do not have significant sequence identity with other proteins of known structure, and since structure identity decreases rapidly when sequence identity sinks below about thirty per cent, there is little hope for homology modeling to be effective for these particular proteins.
+
+\section*{Conclusion:}   
+We have verified the effectiveness of Modeller for predicting the structure of a protein with an unknown sequence. Importantly, the accuracy of our prediction seems to be not terribly sensitive to the number of templates used; even a mere two templates is sufficient enough to generate a very accurate structure, as evaluated both by DOPE score and by visual inspection.
+
+The development version of the source code for this project can be found at \url{https://github.com/tkessinger/bi2-ss12-p6}.
+
+\bibliographystyle{plain}
+\bibliography{Project6.bib}
+
+%\begin{thebibliography}{9}
+  
+%\end{thebibliography}
+
+\end{document}
