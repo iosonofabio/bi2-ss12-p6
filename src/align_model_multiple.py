@@ -7,6 +7,7 @@ content:    Align multiple template sequences into a single MSA and use them
 '''
 # Modules
 import os
+import sys
 import shutil
 from modeller import *
 from modeller.automodel import *
@@ -18,7 +19,7 @@ from read_templates import read_templates, get_tplname
 # Tables
 defaultseqfile = '../starting_sequence/pir/1yje_A.ali'
 # Number of templates to use (for performance reasons)
-n_templates = 3
+n_templates = int(sys.argv[1])
 # The models are assessed using both measures, but DOPE decides the best model
 # in the end (see Shen and Sali 2006)
 assessment_models = ('DOPE', 'GA341')

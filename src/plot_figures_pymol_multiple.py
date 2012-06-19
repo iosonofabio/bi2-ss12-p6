@@ -21,16 +21,19 @@ from read_templates import read_templates, get_tplname
 
 # Tables
 pdb_folder = '../data/templates/pdb/'
-n_templates = 15
 
 
 
 # Functions
-def plot_prediction_templates(n_templates_plot=2):
+def plot_prediction_templates(n_templates=3, n_templates_plot=None):
     '''Plot the prediction together with the templates'''
 
     # Parse arguments
-    n_templates_plot= int(n_templates_plot)
+    n_templates = int(n_templates)
+    if n_templates_plot is None:
+        n_templates_plot = n_templates
+    else:
+        n_templates_plot = int(n_templates_plot)
 
     # Delete previous objects
     pymol.cmd.delete('all')
@@ -43,14 +46,16 @@ def plot_prediction_templates(n_templates_plot=2):
 
 
     # Get the template codes
-    templates = read_templates('../data/templates/most_relevant.dat')[:n_templates_plot+1]
-    templates = filter(lambda t: t['id'] != '1YJE', templates)
+    # 1:n_templates_plot+1 because we want to exclude the target (which appears first on the list otherwise).
+    templates = read_templates('../data/templates/most_relevant.dat')[1:n_templates_plot+1]
+    print templates
 
     # Load structures
     for template in templates:
         id = template['id'].upper()
+        chain = template['chain']
         pymol.cmd.load(pdb_folder+id+'.pdb')
-        pymol.cmd.align(id, predid)
+        pymol.cmd.align('('+id+' and chain '+chain+')', predid)
 
     pymol.cmd.hide(representation='line', selection='all')
 
@@ -66,7 +71,7 @@ def plot_prediction_templates(n_templates_plot=2):
     pymol.cmd.bg_color('white')
 
 
-def plot_prediction_truth():
+def plot_prediction_truth(n_templates=3):
     '''Plot the prediction together with the true structure.'''
 
     # Delete previous objects
@@ -92,14 +97,14 @@ def plot_prediction_truth():
     pymol.cmd.bg_color('white')
 
 
-def save_prediction_templates():
+def save_prediction_templates(n_templates=3):
     '''Save the current image as the prediction-templates result'''
-    pymol.cmd.save('../figures/prediction_templates.png', format='png')
+    pymol.cmd.save('../figures/prediction_templates_' + str(n_templates) + '.png', format='png')
 
 
-def save_prediction_truth():
+def save_prediction_truth(n_templates=3):
     '''Save the current image as the prediction-truth result'''
-    pymol.cmd.save('../figures/prediction_truth.png', format='png')
+    pymol.cmd.save('../figures/prediction_truth_' + str(n_templates) + '.png', format='png')
 
 
 
