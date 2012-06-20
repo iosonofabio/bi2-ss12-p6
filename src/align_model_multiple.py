@@ -19,7 +19,7 @@ from read_templates import read_templates, get_tplname
 # Tables
 defaultseqfile = '../starting_sequence/pir/1yje_A.ali'
 # Number of templates to use (for performance reasons)
-n_templates = int(sys.argv[1])
+n_templates = 15
 # The models are assessed using both measures, but DOPE decides the best model
 # in the end (see Shen and Sali 2006)
 assessment_models = ('DOPE', 'GA341')
@@ -27,6 +27,11 @@ assessment_models = ('DOPE', 'GA341')
 # Script
 if __name__ == '__main__':
     seqfile = defaultseqfile
+
+    # input arguments
+    args = sys.argv
+    if len(args) > 1:
+        n_templates = int(sys.argv[1])
 
     # work in the tmp folder
     if not os.path.isdir('data/tmp'):
@@ -38,7 +43,6 @@ if __name__ == '__main__':
         env = environ()
         #.pdb files must be stored herein
         env.io.atom_files_directory = ['../templates/pdb/']
-    
 
         # align the unknown sequence with all templates
         seqname = (os.path.basename(seqfile).split('.')[0])
@@ -101,7 +105,7 @@ if __name__ == '__main__':
 
         # find top model
         dope_scores = [o['DOPE score'] for o in a.outputs]
-        top_model_ind = dope_scores.index(max(dope_scores))
+        top_model_ind = dope_scores.index(min(dope_scores))
 
 
         # move the model into the results folder
